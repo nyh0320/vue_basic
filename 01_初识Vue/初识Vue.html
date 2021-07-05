@@ -7,18 +7,24 @@
 </head>
 <body>
     <!-- 
-        1.<div id="root">是一个容器，容器中写的不是原始html代码，二十Vue的模板代码。（HTML+JS的混合体）
+        1.<div id="root">是一个容器，容器中写的不是原始html代码，而是Vue的模板代码。（HTML+JS的混合体）
         2.{{XXX}},XXX会自动读取data中的XXX属性
      -->
 
     <!-- 准备好一个容器 -->
     <div id="root">
-        <!-- 双花括号的内容会送Vue配置对象的data区中匹配 -->
+        <!-- 双花括号的内容会从Vue配置对象的data区中匹配 -->
+        <!-- 双花括号内是表达式 -->
         <h1>我的名字是,{{info.name.toUpperCase()}}</h1>
         <h1>我的学校是{{info.school}}</h1>
-        <h1>我的朋友是{{info.name.toUpperCase()}}</h1>
+        <h1>我的朋友是{{info.friend}}</h1>
         <br>
+        <!-- 表达式有逗号，取第一个值 -->
         <h1>{{info.school,info.name}}</h1>
+        <!-- 表达式加小括号展示最后一个值 -->
+        <h1>{{(info.school,info.name)}}</h1>
+        <!-- 关于逻辑“与” ：第一个为false，直接返回第一个，第一个值为true，则返回第二个 -->
+        <h1>{{info.school && info.name}}</h1>
     </div>
     <script>
         //创建一个Vue的实例对象，并传入配置对象

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function demo(obj){
+            this.x=obj.a 
+        }
+
+        //拿到x值
+        demo({a:99})//this代表window
+        console.log(window.x)
+
+        var d=new demo({a:99})//new调用函数，demo中的this是demo函数的实例对象
+        console.log(d.x)
+    </script>
+</body>
+</html>
