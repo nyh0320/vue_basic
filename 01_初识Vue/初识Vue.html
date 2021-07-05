@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>初识Vue</title>
+    <script src="../js/vue.js"></script>
 </head>
 <body>
-    
+    <!-- 
+        1.<div id="root">是一个容器，容器中写的不是原始html代码，二十Vue的模板代码。（HTML+JS的混合体）
+        2.{{XXX}},XXX会自动读取data中的XXX属性
+     -->
+
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <!-- 双花括号的内容会送Vue配置对象的data区中匹配 -->
+        <h1>我的名字是,{{info.name.toUpperCase()}}</h1>
+        <h1>我的学校是{{info.school}}</h1>
+        <h1>我的朋友是{{info.name.toUpperCase()}}</h1>
+        <br>
+        <h1>{{info.school,info.name}}</h1>
+    </div>
+    <script>
+        //创建一个Vue的实例对象，并传入配置对象
+        new Vue({
+            el:'#root',//el用于指定当前Vue实例为哪个容器服务，写法类似于JS
+            data:{//data是存储数据的地方，为root容器提供数据，值为一个对象。
+                info:{
+                    school:'振华中学',
+                    name:'james',
+                    friend:()=>'小美'
+                }
+            }
+        })
+    </script>
 </body>
 </html>
