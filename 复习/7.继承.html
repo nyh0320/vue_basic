@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const Vue={
+            extend(){
+                function VueComponent(){
+                    console.log('VueComponent')
+                }
+                return VueComponent
+            }
+        }
+
+        const School =Vue.extend()
+        const s=new School()
+        console.log('@',s)
+
+
+
+    </script>
+</body>
+</html>

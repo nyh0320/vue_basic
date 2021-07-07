@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+     <!-- 准备好一个容器 -->
+    <div id ="root">
+        <App></App>    
+    </div>
+
+    <script type="text/javascript">
+        import App from './App.vue'
+
+        new Vue({
+            el:'#root',
+            components:{App}
+        })
+    </script>
+</body>
+
+</html>
