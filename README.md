@@ -76,7 +76,13 @@
 
 
 
-注册
+注册：
+
+全局注册
+
+局部注册
+
+
 
 
 
@@ -96,11 +102,73 @@
 
 
 
+二、组件化编程
+
+# 三、使用Vue脚手架
 
 
 
+vue-cli是vue官方提供的脚手架工具 command line interface
 
 
+
+## 3.1使用脚手架创建模板项目
+
+### 3.1.1 创建Vue项目
+
+- 创建脚手架4/3的vue项目, 并运行
+
+  ```
+  npm install -g @vue/cli
+  
+  vue create vue-demo
+  
+  npm run serve
+  ```
+
+- 访问: http://localhost:8080/
+
+### 3.1.2 项目模板结构
+
+- vue-cli2脚手架项目结构
+
+  ```
+  gshop
+  	|-- build : webpack相关的配置文件夹(基本不需要修改)
+  	|-- config: webpack相关的配置文件夹(基本不需要修改)
+  		|-- index.js: 指定的后台服务的端口号和静态资源文件夹
+  	|-- node_modules
+  	|-- src : 源码文件夹
+  		|-- main.js: 应用入口js
+  	|-- static: 静态资源文件夹
+  	|-- .babelrc: babel的配置文件
+  	|-- .editorconfig: 通过编辑器的编码/格式进行一定的配置
+  	|-- .eslintignore: eslint检查忽略的配置
+  	|-- .eslintrc.js: eslint检查的配置
+  	|-- .gitignore: git版本管制忽略的配置
+  	|-- index.html: 主页面文件
+  	|-- package.json: 应用包配置文件 
+  	|-- README.md: 应用描述说明的readme文件
+  ```
+
+- vue-cli3脚手架项目结构
+
+  ```
+  gshop
+  	|-- node_modules
+  	|-- public
+         |-- index.html: 主页面文件
+  	|-- src
+  	   |-- main.js: 应用入口js
+  	|-- babel.config.js: babel的配置文件
+  	|-- vue.config.js: vue的配置文件，需要手动添加
+  	|-- .gitignore: git版本管制忽略的配置
+  	|-- package.json: 应用包配置文件 
+  	|-- README.md: 应用描述说明的readme文件
+  
+  ```
+
+  
 
 
 
