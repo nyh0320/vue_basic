@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <body>
+        <div id="root">
+            <h2>你好啊，{{name}}</h2>
+    
+            <!-- 绑定事件····标准方式 -->
+            <button v-on:click='show1()'>点我打印信息</button>
+            <!-- 绑定事件····简写方式 -->
+            <button @click='show2'>点我打印信息2</button>
+        </div>
+    
+        <script>
+            new Vue({
+                el:'#root',
+                data:{
+                    name:'小强'
+                },
+                methods: {
+                    //不要使用箭头函数，否则this代表window
+                    show1(){
+                        //this是vm
+                        console.log('我是信息1',this.name)
+                    },
+                    show2(event){//开发中大量应用到event
+                        console.log('我是信息2',event.target.innerText)
+                    }
+                }
+            })
+        </script>
+    </body>
+</body>
+
+</html>

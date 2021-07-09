@@ -14,8 +14,10 @@
         <h1>你好，小博</h1>
         
         <!-- 指令语法 -->
+        <!-- 此时url时表达式   v-bind动态指定，不用写死  -->
         <a v-bind:href="url">百度一下</a>
         <a :href="url">百度一下</a>
+        <input type="text" :value="msg">
     </div>
 
     <script >

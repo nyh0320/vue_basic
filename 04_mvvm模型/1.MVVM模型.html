@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        mvvm理解：
+            m：模型(model)，对应data总的数据
+            v：视图(view)，模板代码
+            vm：视图模型（viewModel）：Vue实例对象
+     -->
+
+     <!-- 准备好一个容器 -->
+    <div id ="root">你好，{{name}} </div>
+
+    <script>
+        const vm=new Vue({
+            el:'#root',
+            data:{
+                name:'小强'
+            },
+        })
+
+        //通过vm能看到data中的属性
+        setTimeout(()=>{
+            vm.name='小博'//通过vm可以修改data中的数据
+        },1000)
+    </script>
+</body>
+
+</html>

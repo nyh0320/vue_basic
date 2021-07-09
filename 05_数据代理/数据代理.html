@@ -7,6 +7,16 @@
 </head>
 
 <body>
+    <!-- 
+        1.什么是数据代理：
+            1.1 配置对象data中的数据，会被收集到vm_data中，然后通过 Object.defineProperty中的所有属性
+            1.2 当访问vm.msg时，返回的时data中同名属性的值
+            1.3 当修改vm.msg时，修改的时data中同名属性的值
+        2.为什么要做数据代理
+            为了更方便的读取和修改data中的数据·······如vm._data.msg
+        3.为什么要先收集数据在_data中，再代理出去？
+            更高效地监视数据（划分特区专门存放要监视的数据，不需要监视整个vm）
+     -->
      <!-- 准备好一个容器 -->
     <div id ="root">
         <h2>姓名：{{name}}</h2>
@@ -19,7 +29,7 @@
         const vm=new Vue({
             el:"#root",
             data:{
-                name:'小强',
+                name:'小强', 
                 age:'19',
                 height:'180cm'
             }

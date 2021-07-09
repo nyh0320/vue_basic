@@ -6,7 +6,7 @@
 
 标签、标签属性、标签体
 
-<img src="C:\Users\17645\AppData\Roaming\Typora\typora-user-images\image-20210705190544194.png" alt="image-20210705190544194" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/nyh0320/cloudimg/img/20210709103005.png" alt="image-20210705190544194" style="zoom:33%;" />
 
 - 插值语法：
 
@@ -28,9 +28,9 @@
 
   只有`v-bind:`指令能简写成`:`
 
-1.3数据绑定
+## 1.3数据绑定
 
-<img src="C:\Users\17645\AppData\Roaming\Typora\typora-user-images\image-20210706085930873.png" alt="image-20210706085930873" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/nyh0320/cloudimg/img/20210709103020.png" alt="image-20210706085930873" style="zoom:33%;" />
 
 
 
@@ -40,13 +40,15 @@
 
 ​    备注：
 
-​      1.双向数据绑定一般针对表单类元素（输入类的值，可以产生交互）
+​      1.双向数据绑定一般针对表单类元素（可以输入，产生交互）
 
 ​      2.v-model:value可以简写为v-model:  因为v-model默认收集value值
 
+​      3.v-bind:可以简写成:
 
 
-### 什么是MVVM？
+
+## 1.4MVVM模型
 
 - 概念介绍
 
@@ -58,7 +60,24 @@
 
 - 关系图
 
-  ![img](https:////upload-images.jianshu.io/upload_images/3360875-0165a2d4e529f192.png?imageMogr2/auto-orient/strip|imageView2/2/w/895/format/webp)
+  <img src="https:////upload-images.jianshu.io/upload_images/3360875-0165a2d4e529f192.png?imageMogr2/auto-orient/strip|imageView2/2/w/895/format/webp" alt="img" style="zoom:33%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/nyh0320/cloudimg/img/20210709105539.png" alt="image-20210709105526230" style="zoom: 50%;" />
+
+## 1.5数据代理
+
+<img src="https://cdn.jsdelivr.net/gh/nyh0320/cloudimg/img/20210709145627.png" alt="image-20210709145627677" style="zoom:50%;" />
+
+- 什么是数据代理：
+  - 配置对象data中的数据，会被收集到vm_data中，然后通过 Object.defineProperty中的所有属性
+  - 当访问vm.msg时，返回的时data中同名属性的值
+  - 当修改vm.msg时，修改的时data中同名属性的值
+
+- 为什么要做数据代理
+  - 为了更方便的读取和修改data中的数据·······如vm._data.msg
+
+- 为什么要先收集数据在_data中，再代理出去？
+  - 更高效地监视数据（划分特区专门存放要监视的数据，不需要监视整个vm）
 
 
 
